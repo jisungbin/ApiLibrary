@@ -1,8 +1,6 @@
-# AndroidProjectTemplate
+# ApiLibrary
 
-Android project template for Me([@jisungbin](https://github.com/jisungbin)).
-
-[[Without Clean Architecture]](https://github.com/jisungbin/AndroidBaseComposeTemplate/tree/fb6d0dca590a449dc73f6f2869d2580446b5bdf4)
+Jetpack Compose modern example project - [public apis](https://github.com/davemachado/public-api) list
 
 ---
 
