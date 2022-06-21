@@ -6,7 +6,20 @@
 
 ---
 
-## ⚒️ Tech Skill
+## ⁉️  What is ApiLibrary?
+
+ApiLibrary is an Android open source project that actively utilizes the Android modern skill-set. ApiLibrary shows free APIs by [public-api](https://github.com/davemachado/public-api). 
+
+## ⛲  Supported features
+
+1. Free API list display (search filter supported)
+2. Infinite Scrolling (partial)
+3. Offline mode
+4. Dark Mode and Dynamic Colors
+5. Highest User Performance
+6. Social Sharing
+
+## ⚒️  Tech Skill
 
 #### Architecture
 
@@ -22,8 +35,8 @@
 
 - Hilt
 - Room
-- Paging 3
 - Compose
+- Paging 3
 - DataStore
 
 #### Design
@@ -43,7 +56,7 @@
 - Coroutine/Flow
 - Retrofit, OkHttp
 
-## 🗺️ Layer
+## 🗺️  Layer
 
 #### Project Dependencies Graph
 
@@ -55,4 +68,4 @@
 
 ---
 
-# 🤗 Happy Coding :)
+# 🤗  Happy Coding :)
