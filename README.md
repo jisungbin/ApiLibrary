@@ -63,7 +63,7 @@ ApiLibrary is an Android open source project that actively utilizes the Android 
 
 #### Test
 
-- JUnit5
+- JUnit4
 - Hamcrest
 - compose-ui-testing
 - kotlinx-coroutines-test
