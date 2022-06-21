@@ -6,7 +6,6 @@ object Versions {
         const val Dokka = "1.6.21"
         const val Detekt = "1.21.0-RC1"
         const val KtlintPlugin = "10.3.0"
-        const val CheckDependencyUpdates = "1.5.0"
     }
 
     object Essential {
