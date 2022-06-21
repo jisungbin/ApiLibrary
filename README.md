@@ -1,10 +1,13 @@
-# ApiLibrary 
-
-Modern example project - [public apis](https://github.com/davemachado/public-api) list
+<p align="center">
+  <img src="TODO" width="15%" />
+  <a href="https://iconscout.com/icons/library" target="_blank">Library Icon</a> by <a href="https://iconscout.com/contributors/kerismaker" target="_blank">Kerismaker Studio</a>
+</p>
+<h3 align="center">ApiLibrary: Jetpack Compose modern example project</h3>
+<h4 align="center"><a href="https://github.com/davemachado/public-api" target="_blank">public apis list</a></h4>
 
 ---
 
-## Tech Skill
+## ⚒️ Tech Skill
 
 #### Architecture
 
@@ -41,7 +44,7 @@ Modern example project - [public apis](https://github.com/davemachado/public-api
 - Coroutine/Flow
 - Retrofit, OkHttp
 
-## Layer
+## 🗺️ Layer
 
 #### Project Dependencies Graph
 
@@ -53,4 +56,4 @@ Modern example project - [public apis](https://github.com/davemachado/public-api
 
 ---
 
-# Happy Coding :)
+# 🤗 Happy Coding :)
