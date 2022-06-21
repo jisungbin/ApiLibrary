@@ -6,11 +6,11 @@
 
 ---
 
-## ⁉️  What is ApiLibrary?
+## 📚 What is ApiLibrary?
 
 ApiLibrary is an Android open source project that actively utilizes the Android modern skill-set. ApiLibrary shows free APIs by [public-api](https://github.com/davemachado/public-api). 
 
-## ⛲  Supported features
+## ⛲ Supported features
 
 1. Free API list display (search filter supported)
 2. Infinite Scrolling (partial)
@@ -19,7 +19,7 @@ ApiLibrary is an Android open source project that actively utilizes the Android 
 5. Highest User Performance
 6. Social Sharing
 
-## ⚒️  Tech Skill
+## ⚒️ Tech Skill
 
 #### Architecture
 
@@ -35,8 +35,8 @@ ApiLibrary is an Android open source project that actively utilizes the Android 
 
 - Hilt
 - Room
-- Compose
 - Paging 3
+- Compose 
 - DataStore
 
 #### Design
@@ -56,7 +56,7 @@ ApiLibrary is an Android open source project that actively utilizes the Android 
 - Coroutine/Flow
 - Retrofit, OkHttp
 
-## 🗺️  Layer
+## 🗺️ Layer
 
 #### Project Dependencies Graph
 
@@ -68,4 +68,4 @@ ApiLibrary is an Android open source project that actively utilizes the Android 
 
 ---
 
-# 🤗  Happy Coding :)
+# 🤗 Happy Coding :)
