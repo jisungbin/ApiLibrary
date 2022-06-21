@@ -1,8 +1,8 @@
 <p align="center">
   <img src="/assets/icon.png?raw=true" width="15%" />
 <p align="center">
-<a align="center" href="https://iconscout.com/icons/library" target="_blank">Library Icon</a> by <a href="https://iconscout.com/contributors/kerismaker" target="_blank">Kerismaker Studio</a>
-<h3 align="center">ApiLibrary: Jetpack Compose modern example project</h3>
+<h5 align="center"><a href="https://iconscout.com/icons/library" target="_blank">Library Icon</a> by <a href="https://iconscout.com/contributors/kerismaker" target="_blank">Kerismaker Studio</a></h5>
+<h3 align="center">ApiLibrary: android modern skill-set project</h3>
 
 ---
 
