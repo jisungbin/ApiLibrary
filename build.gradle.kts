@@ -59,8 +59,8 @@ allprojects {
         tasks.withType<KotlinCompile> {
             kotlinOptions {
                 freeCompilerArgs = freeCompilerArgs + listOf(
-                    "-Xopt-in=kotlin.OptIn",
-                    "-Xopt-in=kotlin.RequiresOptIn"
+                    "-opt-in=kotlin.OptIn",
+                    "-opt-in=kotlin.RequiresOptIn"
                 )
             }
         }
