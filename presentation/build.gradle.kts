@@ -1,3 +1,12 @@
+/*
+ * ApiLibrary © 2022 Ji Sungbin. all rights reserved.
+ * ApiLibrary license is under the MIT.
+ *
+ * [build.gradle.kts] created by Ji Sungbin on 22. 6. 22. 오전 3:13
+ *
+ * Please see: https://github.com/jisungbin/ApiLibrary/blob/main/LICENSE.
+ */
+
 plugins {
     installPlugins(
         isPresentation = true,
@@ -7,21 +16,10 @@ plugins {
     id("com.android.application")
     id("com.google.android.gms.oss-licenses-plugin")
     id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin")
-    id("name.remal.check-dependency-updates") version Versions.BuildUtil.CheckDependencyUpdates
 }
 
 android {
     namespace = "land.sungbin.androidprojecttemplate"
-
-    // TODO: set your signing configs
-    /*signingConfigs {
-        create("release") {
-            storeFile = file(BuildConstants.StoreFilePath)
-            storePassword = BuildConstants.StorePassword
-            keyAlias = BuildConstants.KeyAlias
-            keyPassword = BuildConstants.KeyPassword
-        }
-    }*/
 
     defaultConfig {
         versionCode = ApplicationConstants.versionCode
@@ -29,19 +27,9 @@ android {
     }
 
     buildTypes {
-        create("benchmark") {
-            signingConfig = signingConfigs.getByName("debug")
-            matchingFallbacks += listOf("release")
-            isDebuggable = false
-        }
         debug {
             aaptOptions.cruncherEnabled = false // png optimization (default: true)
         }
-
-        // TODO
-        /*release {
-            signingConfig = signingConfigs.getByName("release")
-        }*/
     }
 
     buildFeatures {

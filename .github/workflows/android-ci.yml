@@ -30,6 +30,12 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gradle-
 
+      - name: Touch local properties
+        run: touch local.properties
+
+      - name: Create local properties
+        run: echo "hi=\"world\"" > ./local.properties
+
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
 
@@ -42,10 +48,10 @@ jobs:
       - name: Run test
         run: ./gradlew test
 
-      - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v3.1.0
-        with:
-          file: documents/coverage/jacoco/report.xml
+      # - name: Upload coverage to Codecov
+      #  uses: codecov/codecov-action@v3.1.0
+      #    with:
+      #    file: documents/coverage/jacoco/report.xml
 
-      - name: Build assemble release apk
-        run: ./gradlew assembleRelease
+      - name: Run assemble
+        run: ./gradlew assemble
