@@ -27,11 +27,6 @@ android {
     }
 
     buildTypes {
-        create("benchmark") {
-            signingConfig = signingConfigs.getByName("debug")
-            matchingFallbacks += listOf("release")
-            isDebuggable = false
-        }
         debug {
             aaptOptions.cruncherEnabled = false // png optimization (default: true)
         }
