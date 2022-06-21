@@ -1,4 +1,4 @@
-// Thanks: https://github.com/JakeWharton/timber/blob/trunk/timber/src/main/java/timber/log/Timber.kt#L204
+// https://github.com/JakeWharton/timber/blob/trunk/timber/src/main/java/timber/log/Timber.kt#L204
 
 package land.sungbin.androidprojecttemplate.shared.domain.extension
 

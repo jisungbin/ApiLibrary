@@ -1,3 +1,12 @@
+/*
+ * ApiLibrary © 2022 Ji Sungbin. all rights reserved.
+ * ApiLibrary license is under the MIT.
+ *
+ * [NetworkUtil.kt] created by Ji Sungbin on 22. 6. 22. 오전 3:14
+ *
+ * Please see: https://github.com/jisungbin/ApiLibrary/blob/main/LICENSE.
+ */
+
 package land.sungbin.androidprojecttemplate.shared.android.util
 
 import android.content.Context
@@ -12,8 +21,8 @@ object NetworkUtil {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 getNetworkCapabilities(activeNetwork)?.run {
                     hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR) ||
-                            hasTransport(NetworkCapabilities.TRANSPORT_WIFI) ||
-                            hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET)
+                        hasTransport(NetworkCapabilities.TRANSPORT_WIFI) ||
+                        hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET)
                 } ?: false
             } else {
                 val activeNetworkInfo = activeNetworkInfo
