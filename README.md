@@ -74,13 +74,7 @@ ApiLibrary is an Android open source project that actively utilizes the Android 
 - Coroutine/Flow
 - Retrofit, OkHttp
 
-## 🗺️ Layer
-
-#### Project Dependencies Graph
-
-> TODO
-
-#### Dependency Injection Graph
+## 🗺️ Project Dependencies Graph
 
 > TODO
 
