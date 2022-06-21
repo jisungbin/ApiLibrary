@@ -5,7 +5,6 @@ package land.sungbin.androidprojecttemplate.shared.domain.extension
 import android.os.Build
 import java.util.regex.Pattern
 
-private const val MaxLogLength = 4000
 private const val MaxTagLength = 23
 private val AnonymousClass = Pattern.compile("(\\$\\d+)+$")
 
@@ -20,7 +19,7 @@ private fun createStackElementTag(element: StackTraceElement): String {
     if (m.find()) {
         tag = m.replaceAll("")
     }
-    return if (tag.length <= MaxTagLength || Build.VERSION.SDK_INT >= 26) {
+    return if (tag.length <= MaxTagLength || Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
         tag
     } else {
         tag.substring(0, MaxTagLength)
