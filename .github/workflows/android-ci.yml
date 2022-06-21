@@ -42,10 +42,10 @@ jobs:
       - name: Run test
         run: ./gradlew test
 
-      - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v3.1.0
-        with:
-          file: documents/coverage/jacoco/report.xml
+      # - name: Upload coverage to Codecov
+      #  uses: codecov/codecov-action@v3.1.0
+      #    with:
+      #    file: documents/coverage/jacoco/report.xml
 
-      - name: Build assemble release apk
-        run: ./gradlew assembleRelease
+      - name: Run assemble
+        run: ./gradlew assemble
