@@ -30,6 +30,12 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gradle-
 
+      - name: Touch local properties
+        run: touch local.properties
+
+      - name: Create local properties
+        run: echo "hi=\"world\"" > ./local.properties
+
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
 
