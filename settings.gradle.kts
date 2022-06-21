@@ -1,4 +1,4 @@
-rootProject.name = "AndroidProjectTemplate"
+rootProject.name = "ApiLibrary"
 include(
     ":data",
     ":domain",
