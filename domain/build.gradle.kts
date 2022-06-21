@@ -11,7 +11,6 @@ plugins {
     id("com.android.library")
     id("kotlin-android")
     id("org.jetbrains.dokka") version Versions.BuildUtil.Dokka
-    id("name.remal.check-dependency-updates") version Versions.BuildUtil.CheckDependencyUpdates
     jacoco
 }
 
