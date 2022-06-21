@@ -43,6 +43,11 @@ ApiLibrary is an Android open source project that actively utilizes the Android 
 
 - Material 3
 
+#### Code style
+
+- Ktlint
+- Detekt
+
 #### Test
 
 - JUnit5
