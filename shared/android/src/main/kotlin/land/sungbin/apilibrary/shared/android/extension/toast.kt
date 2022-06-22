@@ -32,7 +32,7 @@ fun Fragment.toast(
     length = length
 )
 
-fun toast(
+inline fun toast(
     context: Context,
     messageBuilder: Context.() -> String,
     length: Int = Toast.LENGTH_SHORT,
@@ -52,7 +52,8 @@ fun toast(
     length = length
 )
 
-private fun toastBuilder(
+@PublishedApi
+internal fun toastBuilder(
     context: Context,
     message: String,
     length: Int,
