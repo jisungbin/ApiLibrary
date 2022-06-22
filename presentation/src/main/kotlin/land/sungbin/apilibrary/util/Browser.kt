@@ -17,9 +17,11 @@ import androidx.browser.customtabs.CustomTabsCallback
 import androidx.browser.customtabs.CustomTabsClient
 import androidx.browser.customtabs.CustomTabsIntent
 import androidx.browser.customtabs.CustomTabsServiceConnection
+import io.github.jisungbin.logeukes.LoggerType
+import io.github.jisungbin.logeukes.logeukes
+import java.lang.ref.WeakReference
 import land.sungbin.apilibrary.R
 import land.sungbin.apilibrary.shared.android.extension.toast
-import java.lang.ref.WeakReference
 
 object Browser {
     private const val ChromePackage = "com.android.chrome"
@@ -81,6 +83,7 @@ object Browser {
                 context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
             }
         } catch (exception: Exception) {
+            logeukes(type = LoggerType.E) { exception }
             toast(
                 context = context,
                 messageBuilder = { getString(R.string.browser_toast_browser_not_found) }
