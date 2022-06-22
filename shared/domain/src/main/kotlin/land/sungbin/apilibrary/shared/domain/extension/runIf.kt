@@ -9,10 +9,11 @@
 
 package land.sungbin.apilibrary.shared.domain.extension
 
-inline fun <T> T.runIf(condition: Boolean, run: T.() -> T) = if (condition) {
-    run()
+inline fun <T> T.runIf(condition: Boolean, run: T.(value: T) -> T) = if (condition) {
+    run(this)
 } else this
 
-inline fun <T> T.runIfBuilder(condition: (T) -> Boolean, run: T.() -> T) = if (condition(this)) {
-    run()
-} else this
+inline fun <T> T.runIf(conditionBuilder: (T) -> Boolean, run: T.(value: T) -> T) = runIf(
+    condition = conditionBuilder(this),
+    run = run
+)
