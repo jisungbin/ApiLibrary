@@ -74,6 +74,7 @@ ApiLibrary is an Android open source project that actively utilizes the Android 
 - WindowInsets
 - Coroutine/Flow
 - Retrofit, OkHttp
+- Splash screens api
 
 ## 🗺️ Project Dependencies Graph
 
