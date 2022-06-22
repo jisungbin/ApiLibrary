@@ -24,7 +24,7 @@ ksp {
 }
 
 android {
-    namespace = "land.sungbin.androidprojecttemplate.data"
+    namespace = "land.sungbin.apilibrary.data"
 }
 
 dependencies {

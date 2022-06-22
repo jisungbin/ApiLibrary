@@ -13,7 +13,7 @@ plugins {
 }
 
 android {
-    namespace = "land.sungbin.androidprojecttemplate.shared.compose"
+    namespace = "land.sungbin.apilibrary.shared.compose"
 
     buildFeatures {
         compose = true

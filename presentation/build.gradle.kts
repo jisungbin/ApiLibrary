@@ -19,7 +19,7 @@ plugins {
 }
 
 android {
-    namespace = "land.sungbin.androidprojecttemplate"
+    namespace = "land.sungbin.apilibrary"
 
     defaultConfig {
         versionCode = ApplicationConstants.versionCode

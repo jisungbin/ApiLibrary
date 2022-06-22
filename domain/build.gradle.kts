@@ -14,7 +14,7 @@ plugins {
 }
 
 android {
-    namespace = "land.sungbin.androidprojecttemplate.domain"
+    namespace = "land.sungbin.apilibrary.domain"
 }
 
 dependencies {

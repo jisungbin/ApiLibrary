@@ -13,7 +13,7 @@ plugins {
 }
 
 android {
-    namespace = "land.sungbin.androidprojecttemplate.shared.android"
+    namespace = "land.sungbin.apilibrary.shared.android"
 }
 
 dependencies {
