@@ -67,7 +67,7 @@ fun MainScreen(
                 .padding(horizontal = 16.dp),
             verticalArrangement = Arrangement.spacedBy(16.dp),
             contentPadding = padding + PaddingValues(
-                top = StatusBarHeightDp,
+                top = StatusBarHeightDp + 16.dp,
                 bottom = NavigationBarHeightDp + 16.dp
             )
         ) {
