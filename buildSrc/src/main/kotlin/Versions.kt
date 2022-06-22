@@ -25,6 +25,7 @@ object Versions {
         const val Main = "1.2.0-rc01"
         const val Landscapist = "1.5.2"
         const val Accompanist = "0.24.11-rc"
+        const val Material3 = "1.0.0-alpha13"
         const val ConstraintLayout = "1.1.0-alpha01"
         const val LifecycleViewModel = "2.5.0-rc02"
     }
@@ -65,7 +66,6 @@ object Versions {
 
     object Test {
         const val JUnit = "4.13.2"
-        const val JaCoCo = "0.8.8"
         const val Hamcrest = "2.2"
         const val Coroutine = "1.6.3"
     }
