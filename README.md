@@ -51,6 +51,7 @@ ApiLibrary is an Android open source project that actively utilizes the Android 
 - Paging 3
 - Compose
 - DataStore
+- App Startup
 
 #### Design
 
