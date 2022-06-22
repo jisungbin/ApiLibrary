@@ -15,7 +15,8 @@ import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -26,11 +27,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
 import land.sungbin.apilibrary.domain.model.ApiItem
+import land.sungbin.apilibrary.shared.compose.composable.BorderOption
 import land.sungbin.apilibrary.shared.compose.composable.RoundBorderText
 import land.sungbin.apilibrary.shared.compose.preview.ApiItemSinglePreview
 import land.sungbin.apilibrary.shared.compose.preview.BackgroundPreview
@@ -43,10 +44,8 @@ fun ApiItem(
     modifier: Modifier = Modifier,
     @PreviewParameter(ApiItemSinglePreview::class) api: ApiItem
 ) {
-    val context = LocalContext.current.applicationContext
-    val headerTexts = remember(api) {
-        listOf(api.apiName, api.category)
-    }
+    // must activity context - open browser
+    val context = LocalContext.current
     val subTexts = remember(api) {
         buildList {
             if (api.authType.isNotEmpty()) {
@@ -64,7 +63,7 @@ fun ApiItem(
     Card(
         modifier = modifier
             .fillMaxWidth()
-            .height(100.dp),
+            .wrapContentHeight(),
         shape = RoundedCornerShape(15.dp),
         elevation = CardDefaults.cardElevation(defaultElevation = 10.dp),
         onClick = {
@@ -75,23 +74,27 @@ fun ApiItem(
         }
     ) {
         Column(
-            modifier = Modifier.fillMaxSize(),
-            verticalArrangement = Arrangement.spacedBy(8.dp)
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(10.dp),
+            verticalArrangement = Arrangement.spacedBy(12.dp)
         ) {
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
-                headerTexts.forEach { text ->
-                    Text(
-                        text = text,
-                        style = MaterialTheme.typography.titleLarge
-                    )
-                }
+                Text(
+                    text = api.apiName,
+                    style = MaterialTheme.typography.titleMedium
+                )
+                Text(
+                    text = api.category,
+                    style = MaterialTheme.typography.titleSmall
+                )
             }
             Text(
                 text = api.description,
-                style = MaterialTheme.typography.bodyLarge.copy(fontWeight = FontWeight.Bold),
+                style = MaterialTheme.typography.bodyLarge,
                 maxLines = 3,
                 overflow = TextOverflow.Ellipsis
             )
@@ -104,10 +107,15 @@ fun ApiItem(
                         text = text,
                         shape = RoundedCornerShape(8.dp),
                         innerPadding = PaddingValues(
-                            horizontal = 4.dp,
-                            vertical = 2.dp
+                            horizontal = 8.dp,
+                            vertical = 5.dp
                         ),
-                        style = MaterialTheme.typography.labelMedium
+                        borderOption = BorderOption(
+                            color = MaterialTheme.colorScheme.outline
+                        ),
+                        style = MaterialTheme.typography.labelLarge.copy(
+                            color = MaterialTheme.colorScheme.onSurface
+                        )
                     )
                 }
             }
