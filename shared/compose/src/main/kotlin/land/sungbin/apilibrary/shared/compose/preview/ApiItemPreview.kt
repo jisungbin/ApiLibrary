@@ -11,34 +11,31 @@ package land.sungbin.apilibrary.shared.compose.preview
 
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
 import land.sungbin.apilibrary.domain.model.ApiItem
+import land.sungbin.apilibrary.shared.domain.extension.runIf
 import kotlin.random.Random
 
-class ApiItemSinglePreview : PreviewParameterProvider<ApiItem> {
-    override val values = sequenceOf(
-        ApiItem(
-            description = "This is a description.",
-            category = "Category",
-            https = Random.nextBoolean(),
-            authType = "apiKey",
-            apiName = "api",
-            cors = Random.nextBoolean(),
-            link = "https://api.github.com/users/jisungbin",
+private val PreviewApiItem
+    get() = ApiItem(
+        description = "This is a description.",
+        category = "category",
+        https = Random.nextBoolean(),
+        authType = "apiKey",
+        apiName = "api - ${
+        Random.nextInt().runIf(
+            conditionBuilder = { number -> number < 0 },
+            run = { number -> number * -1 }
         )
+        }",
+        cors = Random.nextBoolean(),
+        link = "https://api.github.com/users/jisungbin",
     )
+
+class ApiItemSinglePreview : PreviewParameterProvider<ApiItem> {
+    override val values = sequenceOf(PreviewApiItem)
 }
 
 class ApiItemMultiPreview : PreviewParameterProvider<List<ApiItem>> {
     override val values = sequenceOf(
-        List(10) { index ->
-            ApiItem(
-                description = "This is a $index index description.",
-                category = "Category",
-                https = Random.nextBoolean(),
-                authType = "apiKey",
-                apiName = "api",
-                cors = Random.nextBoolean(),
-                link = "https://api.github.com/users/jisungbin",
-            )
-        }
+        List(50) { PreviewApiItem }
     )
 }
