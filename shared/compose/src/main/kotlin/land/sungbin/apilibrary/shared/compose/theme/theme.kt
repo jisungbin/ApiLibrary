@@ -85,7 +85,7 @@ fun ApiLibraryTheme(
     isDynamicColor: Boolean = true,
     content: @Composable () -> Unit
 ) {
-    val context = LocalContext.current
+    val context = LocalContext.current.applicationContext
     val dynamicColor = isDynamicColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S
     val colorScheme = when {
         dynamicColor && isDarkTheme -> {
