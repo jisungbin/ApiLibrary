@@ -12,7 +12,7 @@
   <a href="https://ktlint.github.io/"><img src="https://img.shields.io/badge/code%20style-%E2%9D%A4-FF4081.svg" alt="ktlint"/></a>
   <a href="https://wakatime.com/badge/github/jisungbin/ApiLibrary"><img src="https://wakatime.com/badge/github/jisungbin/ApiLibrary.svg" alt="wakatime"></a>
   <br/>
-  <a href="https://github.com/jisungbin/ApiLibrary/actions/workflows/android-ci.yml"><img src="https://github.com/jisungbin/ApiLibrary/actions/workflows/android-ci.yml/badge.svg?branch=develop" alt="Android CI"/></a>
+  <a href="https://github.com/jisungbin/ApiLibrary/actions/workflows/android-ci.yml"><img src="https://github.com/jisungbin/ApiLibrary/actions/workflows/android-ci.yml/badge.svg" alt="Android CI"/></a>
   <a href="https://sonarcloud.io/summary/new_code?id=jisungbin_ApiLibrary"><img src="https://sonarcloud.io/api/project_badges/measure?project=jisungbin_ApiLibrary&metric=sqale_rating" alt="Maintainability Rating"/></a> 
   <a href="https://sonarcloud.io/summary/new_code?id=jisungbin_ApiLibrary"><img src="https://sonarcloud.io/api/project_badges/measure?project=jisungbin_ApiLibrary&metric=ncloc" alt="Lines of Code"/></a>
 </p>
