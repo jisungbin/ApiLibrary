@@ -1,3 +1,5 @@
+@file:Suppress("OPT_IN_IS_NOT_ENABLED")
+
 import org.gradle.api.artifacts.ProjectDependency
 import org.gradle.api.artifacts.dsl.DependencyHandler
 import org.gradle.plugin.use.PluginDependenciesSpec
@@ -20,6 +22,10 @@ fun PluginDependenciesSpec.installPlugins(
     }
 }
 
+@OptIn(
+    AndroidTestImplementation::class, // Dependencies.Test.ComposeUI
+    DebugImplementation::class // Dependencies.Test.ComposeDebug
+)
 fun DependencyHandler.installDependencies(
     isSharedModule: Boolean = false,
     orbit: Boolean = false,
@@ -39,8 +45,8 @@ fun DependencyHandler.installDependencies(
     }
     if (compose) {
         Dependencies.Compose.forEach(::implementation)
+        debugImplementation(Dependencies.Debug.Compose)
         projectImplementation(ProjectConstants.SharedCompose)
-        Dependencies.Debug.Compose.forEach(::debugImplementation)
     }
     if (test) {
         if (orbit) {
@@ -48,6 +54,7 @@ fun DependencyHandler.installDependencies(
         }
         if (compose) {
             androidTestImplementation(Dependencies.Test.ComposeUI)
+            debugImplementation(Dependencies.Test.ComposeDebug)
         }
         Dependencies.Test.Local.forEach(::testImplementation)
     }

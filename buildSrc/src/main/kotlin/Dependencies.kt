@@ -21,16 +21,16 @@ object Dependencies {
         "androidx.compose.material:material:${Versions.Compose.Main}",
         "androidx.compose.ui:ui-tooling-preview:${Versions.Compose.Main}",
         "androidx.compose.material3:material3:${Versions.Compose.Material3}",
-        "com.github.skydoves:landscapist-coil:${Versions.Compose.Landscapist}",
         "com.google.accompanist:accompanist-placeholder:${Versions.Compose.Accompanist}",
         "com.google.accompanist:accompanist-swiperefresh:${Versions.Compose.Accompanist}",
         "androidx.compose.material3:material3-window-size-class:${Versions.Compose.Material3}",
+        "com.google.accompanist:accompanist-systemuicontroller:${Versions.Compose.Accompanist}",
         "androidx.lifecycle:lifecycle-viewmodel-compose:${Versions.Compose.LifecycleViewModel}",
-        "com.google.accompanist:accompanist-navigation-animation:${Versions.Compose.Accompanist}",
         "androidx.constraintlayout:constraintlayout-compose:${Versions.Compose.ConstraintLayout}",
     )
 
     val Ui = listOf(
+        "androidx.browser:browser:${Versions.Ui.Browser}",
         "androidx.core:core-splashscreen:${Versions.Ui.Splash}",
         "com.google.android.material:material:${Versions.Ui.Material}",
         "com.google.android.gms:play-services-oss-licenses:${Versions.OssLicense.Main}"
@@ -78,15 +78,17 @@ object Dependencies {
             "org.hamcrest:hamcrest:${Versions.Test.Hamcrest}",
             "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.Test.Coroutine}"
         )
+
+        @AndroidTestImplementation
         const val ComposeUI = "androidx.compose.ui:ui-test-junit4:${Versions.Compose.Main}"
+
+        @DebugImplementation
+        const val ComposeDebug = "androidx.compose.ui:ui-test-manifest:${Versions.Compose.Main}"
     }
 
     object Debug {
         const val LeakCanary =
             "com.squareup.leakcanary:leakcanary-android:${Versions.Util.LeakCanary}"
-        val Compose = listOf(
-            "androidx.compose.ui:ui-tooling:${Versions.Compose.Main}",
-            "androidx.compose.ui:ui-test-manifest:${Versions.Compose.Main}"
-        )
+        const val Compose = "androidx.compose.ui:ui-tooling:${Versions.Compose.Main}"
     }
 }

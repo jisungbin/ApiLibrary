@@ -12,11 +12,15 @@ package land.sungbin.apilibrary
 import android.app.Application
 import com.google.android.material.color.DynamicColors
 import dagger.hilt.android.HiltAndroidApp
+import io.github.jisungbin.logeukes.Logeukes
 
 @HiltAndroidApp
 class ApiLibrary : Application() {
     override fun onCreate() {
         super.onCreate()
         DynamicColors.applyToActivitiesIfAvailable(this)
+        if (BuildConfig.DEBUG) {
+            Logeukes.setup()
+        }
     }
 }

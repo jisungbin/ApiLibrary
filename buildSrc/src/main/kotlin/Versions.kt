@@ -23,7 +23,6 @@ object Versions {
 
     object Compose {
         const val Main = "1.2.0-rc01"
-        const val Landscapist = "1.5.2"
         const val Accompanist = "0.24.11-rc"
         const val Material3 = "1.0.0-alpha13"
         const val ConstraintLayout = "1.1.0-alpha01"
@@ -31,6 +30,7 @@ object Versions {
     }
 
     object Ui {
+        const val Browser = "1.4.0"
         const val Splash = "1.0.0-rc01"
         const val Material = "1.7.0-alpha02"
     }
@@ -45,7 +45,6 @@ object Versions {
         const val Logeukes = "1.0.0"
         const val Jackson = "2.13.3"
         const val LeakCanary = "2.9.1"
-        const val SecretsGradlePlugin = "2.0.1"
     }
 
     object Analytics {

@@ -21,7 +21,7 @@ object NetworkUtil {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 isNetworkAvailableApi23()
             } else {
-                isNetworkAvailableApiUnder23()
+                isNetworkAvailableBeforeApi23()
             }
         }
 
@@ -38,7 +38,7 @@ object NetworkUtil {
         "DEPRECATION", // activeNetworkInfo
         "MissingPermission" // activeNetworkInfo
     )
-    private fun ConnectivityManager.isNetworkAvailableApiUnder23(): Boolean {
+    private fun ConnectivityManager.isNetworkAvailableBeforeApi23(): Boolean {
         val activeNetworkInfo = activeNetworkInfo
         if (activeNetworkInfo != null) {
             val type = activeNetworkInfo.type

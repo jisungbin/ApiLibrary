@@ -9,4 +9,6 @@
 
 <resources>
     <string name="app_name">ApiLibrary</string>
+
+    <string name="browser_toast_browser_not_found">The installed browser could not be found.\nPlease install the browser and try again.</string>
 </resources>

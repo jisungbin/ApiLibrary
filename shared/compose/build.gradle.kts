@@ -1,11 +1,13 @@
+@file:Suppress("OPT_IN_IS_NOT_ENABLED")
+
 /*
- * ApiLibrary © 2022 Ji Sungbin. all rights reserved.
- * ApiLibrary license is under the MIT.
- *
- * [build.gradle.kts] created by Ji Sungbin on 22. 6. 22. 오전 3:13
- *
- * Please see: https://github.com/jisungbin/ApiLibrary/blob/main/LICENSE.
- */
+* ApiLibrary © 2022 Ji Sungbin. all rights reserved.
+* ApiLibrary license is under the MIT.
+*
+* [build.gradle.kts] created by Ji Sungbin on 22. 6. 22. 오전 3:13
+*
+* Please see: https://github.com/jisungbin/ApiLibrary/blob/main/LICENSE.
+*/
 
 plugins {
     id("com.android.library")
@@ -24,6 +26,7 @@ android {
     }
 }
 
+@OptIn(AndroidTestImplementation::class) // Dependencies.Test.ComposeUI
 dependencies {
     val projects = listOf(
         ProjectConstants.Domain,
