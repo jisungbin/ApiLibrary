@@ -11,7 +11,7 @@ plugins {
     installPlugins(
         isPresentation = true,
         isDFM = false,
-        hilt = false,
+        hilt = true,
     )
     id("com.android.application")
     id("com.google.android.gms.oss-licenses-plugin")
