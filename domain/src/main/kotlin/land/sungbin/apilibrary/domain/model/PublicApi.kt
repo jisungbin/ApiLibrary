@@ -9,7 +9,7 @@
 
 package land.sungbin.apilibrary.domain.model
 
-data class ApiListResponse(
+data class PublicApi(
     val entries: List<ApiItem>,
     val count: Int
 )
