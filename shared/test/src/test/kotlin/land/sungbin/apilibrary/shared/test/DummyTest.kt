@@ -13,22 +13,12 @@ import org.junit.Test
 
 class DummyTest {
     @Test
-    fun `entries response dummy is not empty`() {
-        assert(DummyPublicApiResponse.Entries.isNotEmpty())
-    }
-
-    @Test
     fun `entries response dummy json count must be 1421`() {
-        assert(DummyPublicApiResponse.Entries.contains("\"count\": 1421"))
-    }
-
-    @Test
-    fun `categories response dummy is not empty`() {
-        assert(DummyPublicApiResponse.Categories.isNotEmpty())
+        assert(PublicApiResponseDummy.Entries.contains("\"count\": 1421"))
     }
 
     @Test
     fun `categories response dummy json count must be 51`() {
-        assert(DummyPublicApiResponse.Categories.contains("\"count\": 51"))
+        assert(PublicApiResponseDummy.Categories.contains("\"count\": 51"))
     }
 }

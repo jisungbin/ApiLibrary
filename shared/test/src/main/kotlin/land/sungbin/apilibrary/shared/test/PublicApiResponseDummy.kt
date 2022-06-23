@@ -9,7 +9,7 @@
 
 package land.sungbin.apilibrary.shared.test
 
-object DummyPublicApiResponse {
+object PublicApiResponseDummy {
     val Entries = Utils.readResourceString("entries-response.json")
     val Categories = Utils.readResourceString("categories-response.json")
 }
