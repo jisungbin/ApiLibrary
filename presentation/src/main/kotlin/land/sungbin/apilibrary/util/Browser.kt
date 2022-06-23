@@ -10,26 +10,21 @@
 package land.sungbin.apilibrary.util
 
 import android.content.ActivityNotFoundException
-import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
-import androidx.browser.customtabs.CustomTabsCallback
-import androidx.browser.customtabs.CustomTabsClient
 import androidx.browser.customtabs.CustomTabsIntent
-import androidx.browser.customtabs.CustomTabsServiceConnection
 import io.github.jisungbin.logeukes.LoggerType
 import io.github.jisungbin.logeukes.logeukes
 import land.sungbin.apilibrary.R
 import land.sungbin.apilibrary.shared.android.extension.toast
-import java.lang.ref.WeakReference
 
 object Browser {
-    private const val ChromePackage = "com.android.chrome"
+    // TODO: performance increase by using client.warmup()
+    /*private const val ChromePackage = "com.android.chrome"
     private var customTabsClientWrapper = WeakReference<CustomTabsClient?>(null)
     private val customTabsClient get() = customTabsClientWrapper.get()!!
     private val customTabsSession by lazy { customTabsClient.newSession(CustomTabsCallback()) }
-    private lateinit var customTabIntent: CustomTabsIntent
 
     private val connection = object : CustomTabsServiceConnection() {
         override fun onServiceDisconnected(name: ComponentName?) {
@@ -51,38 +46,35 @@ object Browser {
         }
     }
 
-    fun startup(context: Context) {
-        CustomTabsClient.bindCustomTabsService(context, ChromePackage, connection)
-    }
+    fun startup(context: Context) = // FIXME: always return false
+        CustomTabsClient.bindCustomTabsService(context, ChromePackage, connection)*/
+
+    private lateinit var customTabIntent: CustomTabsIntent
 
     fun open(context: Context, url: String) {
         try {
-            if (isAvailableChrome) {
-                if (!::customTabIntent.isInitialized) {
-                    customTabIntent = CustomTabsIntent.Builder(customTabsSession)
-                        .setShareState(CustomTabsIntent.SHARE_STATE_OFF)
-                        .setStartAnimations(
-                            context,
-                            R.anim.slide_in_right,
-                            R.anim.slide_out_left
+            if (!::customTabIntent.isInitialized) {
+                customTabIntent = CustomTabsIntent.Builder(/*customTabsSession*/)
+                    .setShareState(CustomTabsIntent.SHARE_STATE_OFF)
+                    /*.setStartAnimations(
+                        context,
+                        R.anim.slide_in_right,
+                        R.anim.slide_out_left
+                    )
+                    .setExitAnimations(
+                        context,
+                        android.R.anim.slide_in_left,
+                        android.R.anim.slide_out_right
+                    )*/
+                    .build()
+                    .also { customTabIntent ->
+                        customTabIntent.intent.putExtra(
+                            Intent.EXTRA_REFERRER,
+                            Uri.parse("android-app://${context.packageName}")
                         )
-                        .setExitAnimations(
-                            context,
-                            android.R.anim.slide_in_left,
-                            android.R.anim.slide_out_right
-                        )
-                        .build()
-                        .also { customTabIntent ->
-                            customTabIntent.intent.putExtra(
-                                Intent.EXTRA_REFERRER,
-                                Uri.parse("android-app://${context.packageName}")
-                            )
-                        }
-                }
-                customTabIntent.launchUrl(context, Uri.parse(url))
-            } else {
-                context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
+                    }
             }
+            customTabIntent.launchUrl(context, Uri.parse(url))
         } catch (exception: ActivityNotFoundException) {
             logeukes(type = LoggerType.E) { exception }
             toast(
