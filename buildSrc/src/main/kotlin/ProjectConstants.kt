@@ -3,8 +3,9 @@
 object ProjectConstants {
     const val Data = ":data"
     const val Domain = ":domain"
-    const val SharedAndroid = ":shared:android"
+    const val Presentation = ":presentation"
+    const val SharedTest = ":shared:test"
     const val SharedDomain = ":shared:domain"
     const val SharedCompose = ":shared:compose"
-    const val Presentation = ":presentation"
+    const val SharedAndroid = ":shared:android"
 }

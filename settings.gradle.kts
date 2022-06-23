@@ -12,6 +12,7 @@ include(
     ":data",
     ":domain",
     ":presentation",
+    ":shared:test",
     ":shared:domain",
     ":shared:compose",
     ":shared:android",
