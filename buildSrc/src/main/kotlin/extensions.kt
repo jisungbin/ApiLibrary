@@ -24,10 +24,12 @@ fun PluginDependenciesSpec.installPlugins(
 
 @OptIn(
     AndroidTestImplementation::class, // Dependencies.Test.ComposeUI
-    DebugImplementation::class // Dependencies.Test.ComposeDebug
+    DebugImplementation::class, // Dependencies.Test.ComposeDebug
+    TestRuntimeOnly::class // Dependencies.Test.JunitVintageEngine
 )
 fun DependencyHandler.installDependencies(
-    isSharedModule: Boolean = false,
+    excludeSharedAndroidModule: Boolean = false,
+    isSharedTestModule: Boolean = false,
     orbit: Boolean = false,
     hilt: Boolean = false,
     compose: Boolean = false,
@@ -36,7 +38,7 @@ fun DependencyHandler.installDependencies(
     if (orbit) {
         implementation(Dependencies.Orbit.Main)
     }
-    if (!isSharedModule) {
+    if (!excludeSharedAndroidModule) {
         projectImplementation(ProjectConstants.SharedAndroid)
     }
     if (hilt) {
@@ -56,7 +58,11 @@ fun DependencyHandler.installDependencies(
             androidTestImplementation(Dependencies.Test.ComposeUI)
             debugImplementation(Dependencies.Test.ComposeDebug)
         }
+        if (!isSharedTestModule) {
+            projectImplementation(ProjectConstants.SharedTest)
+        }
         Dependencies.Test.Local.forEach(::testImplementation)
+        testRuntimeOnly(Dependencies.Test.JunitVintageEngine)
     }
 }
 
@@ -93,6 +99,10 @@ private fun DependencyHandler.debugImplementation(dependencyNotation: Any) {
 
 private fun DependencyHandler.testImplementation(dependencyNotation: Any) {
     add("testImplementation", dependencyNotation)
+}
+
+private fun DependencyHandler.testRuntimeOnly(dependencyNotation: Any) {
+    add("testRuntimeOnly", dependencyNotation)
 }
 
 private fun DependencyHandler.androidTestImplementation(dependencyNotation: Any) {

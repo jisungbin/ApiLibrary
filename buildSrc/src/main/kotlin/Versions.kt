@@ -67,5 +67,6 @@ object Versions {
         const val JUnit = "4.13.2"
         const val Hamcrest = "2.2"
         const val Coroutine = "1.6.3"
+        const val JunitVintageEngine = "5.8.2"
     }
 }

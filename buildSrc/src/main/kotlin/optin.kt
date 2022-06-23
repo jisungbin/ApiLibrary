@@ -15,3 +15,7 @@ annotation class DebugImplementation
 @RequiresOptIn(message = "This dependency must be AndroidTestImplementation.")
 @Retention(AnnotationRetention.BINARY)
 annotation class AndroidTestImplementation
+
+@RequiresOptIn(message = "This dependency must be TestRuntimeOnly.")
+@Retention(AnnotationRetention.BINARY)
+annotation class TestRuntimeOnly

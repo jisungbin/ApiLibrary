@@ -55,7 +55,7 @@ dependencies {
 
     debugImplementation(Dependencies.Debug.LeakCanary)
     installDependencies(
-        isSharedModule = false,
+        excludeSharedAndroidModule = false,
         orbit = true,
         hilt = true,
         compose = true,

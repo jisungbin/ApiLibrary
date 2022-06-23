@@ -23,5 +23,8 @@ dependencies {
     )
     projects.forEach(::projectImplementation)
 
-    Dependencies.Test.Local.forEach(::testImplementation)
+    installDependencies(
+        excludeSharedAndroidModule = true,
+        test = true
+    )
 }
