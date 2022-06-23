@@ -13,6 +13,8 @@ style:
     ignoreCompanionObjectPropertyDeclaration: true
   UnusedPrivateMember:
     ignoreAnnotated: [ 'preview' ]
+  ForbiddenComment:
+    active: false
 
 naming:
   TopLevelPropertyNaming:
