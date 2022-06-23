@@ -66,7 +66,6 @@ ApiLibrary shows free APIs by [public-api](https://github.com/davemachado/public
 #### Test
 
 - JUnit4
-- Hamcrest
 - compose-ui-testing
 - kotlinx-coroutines-test
 
