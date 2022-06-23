@@ -46,4 +46,9 @@ dependencies {
         Dependencies.Compiler.RoomKsp
     )
     ksps.forEach(::ksp)
+
+    installDependencies(
+        excludeSharedAndroidModule = true,
+        test = true
+    )
 }

@@ -22,9 +22,4 @@ dependencies {
         ProjectConstants.SharedDomain
     )
     projects.forEach(::projectImplementation)
-
-    installDependencies(
-        excludeSharedAndroidModule = true,
-        test = true
-    )
 }

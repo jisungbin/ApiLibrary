@@ -75,7 +75,7 @@ object Dependencies {
     object Test {
         val Local = listOf(
             "junit:junit:${Versions.Test.JUnit}",
-            "org.hamcrest:hamcrest:${Versions.Test.Hamcrest}",
+            "io.mockk:mockk:${Versions.Test.Mockk}",
             "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.Test.Coroutine}"
         )
 

@@ -42,6 +42,7 @@ android {
 
 dependencies {
     val features = listOf(
+        ProjectConstants.Data,
         ProjectConstants.SharedAndroid,
     )
     features.forEach(::projectImplementation)
