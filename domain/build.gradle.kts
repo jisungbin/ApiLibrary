@@ -22,6 +22,4 @@ dependencies {
         ProjectConstants.SharedDomain
     )
     projects.forEach(::projectImplementation)
-
-    Dependencies.Test.Local.forEach(::testImplementation)
 }

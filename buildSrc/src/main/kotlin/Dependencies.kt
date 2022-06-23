@@ -75,9 +75,13 @@ object Dependencies {
     object Test {
         val Local = listOf(
             "junit:junit:${Versions.Test.JUnit}",
-            "org.hamcrest:hamcrest:${Versions.Test.Hamcrest}",
+            "io.mockk:mockk:${Versions.Test.Mockk}",
             "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.Test.Coroutine}"
         )
+
+        @TestRuntimeOnly
+        const val JunitVintageEngine =
+            "org.junit.vintage:junit-vintage-engine:${Versions.Test.JunitVintageEngine}"
 
         @AndroidTestImplementation
         const val ComposeUI = "androidx.compose.ui:ui-test-junit4:${Versions.Compose.Main}"

@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="/assets/icon.png?raw=true" width="20%" />
+  <img src="/art/icons/logo.png?raw=true" width="20%" />
 <p align="center">
 <h5 align="center"><a href="https://iconscout.com/icons/library" target="_blank">Library Icon</a> by <a href="https://iconscout.com/contributors/kerismaker" target="_blank">Kerismaker Studio</a></h5>
-<h3 align="center">ApiLibrary: android modern skill-set project</h3>
+<h3 align="center">ApiLibrary: android modern skill set project</h3>
 <p align="center">
   <a href="https://github.com/jisungbin/ApiLibrary/blob/main/LICENSE"><img alt="License" src="https://img.shields.io/badge/License-MIT-blue"/></a>
   <a href="https://developer.android.com/about/versions/lollipop"><img alt="API 21+" src="https://img.shields.io/badge/API-21%2B-brightgreen.svg"/></a>
@@ -21,7 +21,8 @@
 
 ## 📚 What is ApiLibrary?
 
-ApiLibrary is an Android open source project that actively utilizes the Android modern skill-set. ApiLibrary shows free APIs by [public-api](https://github.com/davemachado/public-api).
+ApiLibrary is an Android open source project that actively utilizes the Android modern skill set.
+ApiLibrary shows free APIs by [public-api](https://github.com/davemachado/public-api).
 
 ## ⛲ Supported features
 
@@ -65,7 +66,6 @@ ApiLibrary is an Android open source project that actively utilizes the Android 
 #### Test
 
 - JUnit4
-- Hamcrest
 - compose-ui-testing
 - kotlinx-coroutines-test
 
@@ -78,7 +78,9 @@ ApiLibrary is an Android open source project that actively utilizes the Android 
 
 ## 🗺️ Project Dependencies Graph
 
-> TODO
+<p align="center">
+  <img src="/art/project-dependency-graph/graph.dot.png?raw=true" />
+</p>
 
 ---
 

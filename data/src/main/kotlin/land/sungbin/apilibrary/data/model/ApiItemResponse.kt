@@ -11,7 +11,7 @@ package land.sungbin.apilibrary.data.model
 
 import com.fasterxml.jackson.annotation.JsonProperty
 
-data class ApiItem(
+data class ApiItemResponse(
     @field:JsonProperty("Description")
     val description: String? = null,
 

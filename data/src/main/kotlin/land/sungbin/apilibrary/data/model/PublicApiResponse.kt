@@ -10,11 +10,10 @@
 package land.sungbin.apilibrary.data.model
 
 import com.fasterxml.jackson.annotation.JsonProperty
-import land.sungbin.apilibrary.domain.model.ApiItem
 
-data class ApiListResponse(
+data class PublicApiResponse(
     @field:JsonProperty("entries")
-    val entries: List<ApiItem?>? = null,
+    val entries: List<ApiItemResponse?>? = null,
 
     @field:JsonProperty("count")
     val count: Int? = null
