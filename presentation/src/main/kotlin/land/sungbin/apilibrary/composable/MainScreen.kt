@@ -43,7 +43,8 @@ import land.sungbin.apilibrary.shared.compose.rememberToast
 @Composable
 fun MainScreen(
     modifier: Modifier = Modifier,
-    @PreviewParameter(ApiItemMultiPreview::class) apiItems: List<ApiItem>
+    @PreviewParameter(ApiItemMultiPreview::class) apiItems: List<ApiItem>,
+    // vm: MainViewModel = viewModel()
 ) {
     val toast = rememberToast()
 
@@ -73,7 +74,7 @@ fun MainScreen(
         ) {
             items(
                 items = apiItems,
-                key = { api -> api.apiName }
+                key = { api -> api.hashCode() }
             ) { apiItem ->
                 ApiItem(
                     modifier = Modifier.animateItemPlacement(),

@@ -12,31 +12,55 @@ package land.sungbin.apilibrary
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.activity.viewModels
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.core.view.WindowCompat
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import dagger.hilt.android.AndroidEntryPoint
 import land.sungbin.apilibrary.composable.MainScreen
-import land.sungbin.apilibrary.shared.compose.preview.ApiItemMultiPreview
+import land.sungbin.apilibrary.domain.model.ApiItem
+import land.sungbin.apilibrary.mvi.MainSideEffect
+import land.sungbin.apilibrary.mvi.MainState
 import land.sungbin.apilibrary.shared.compose.theme.ApiLibraryTheme
-import land.sungbin.apilibrary.util.Browser
+import org.orbitmvi.orbit.viewmodel.observe
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Browser.startup(applicationContext)
+//        Browser.startup(applicationContext).also(::println)
         WindowCompat.setDecorFitsSystemWindows(window, false)
 
         setContent {
             val systemUiController = rememberSystemUiController()
             val isDarkMode = isSystemInDarkTheme()
+            val vm by viewModels<MainViewModel>()
+
+            var apiItems by remember { mutableStateOf(emptyList<ApiItem>()) }
 
             LaunchedEffect(Unit) {
+                vm.loadPublicApis()
+                vm.observe(
+                    lifecycleOwner = this@MainActivity,
+                    state = { mainState ->
+                        handleState(
+                            state = mainState,
+                            updateApiItemState = { newApiItems ->
+                                apiItems = newApiItems
+                            }
+                        )
+                    },
+                    sideEffect = ::handleSideEffect
+                )
+
                 systemUiController.setStatusBarColor(
                     color = Color.Transparent,
                     darkIcons = !isDarkMode
@@ -53,8 +77,33 @@ class MainActivity : ComponentActivity() {
             ApiLibraryTheme {
                 MainScreen(
                     modifier = Modifier.fillMaxSize(),
-                    apiItems = ApiItemMultiPreview().values.first()
+                    apiItems = apiItems
                 )
+            }
+        }
+    }
+
+    private fun handleState(
+        state: MainState,
+        updateApiItemState: (apiItem: List<ApiItem>) -> Unit
+    ) {
+        when (state) {
+            MainState.Loading -> {
+                // TODO: show loading
+            }
+            is MainState.LoadDone -> {
+                updateApiItemState(state.apiItems)
+            }
+            is MainState.Fail -> {
+                // TODO: show error
+            }
+        }
+    }
+
+    private fun handleSideEffect(sideEffect: MainSideEffect) {
+        when (sideEffect) {
+            is MainSideEffect.SaveToDatabase -> {
+                // TODO: save to room database
             }
         }
     }

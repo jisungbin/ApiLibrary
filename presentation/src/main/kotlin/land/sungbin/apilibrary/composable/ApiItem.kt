@@ -27,6 +27,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
@@ -85,7 +86,9 @@ fun ApiItem(
             ) {
                 Text(
                     text = api.apiName,
-                    style = MaterialTheme.typography.titleMedium
+                    style = MaterialTheme.typography.titleMedium.copy(
+                        fontWeight = FontWeight.Bold
+                    )
                 )
                 Text(
                     text = api.category,
@@ -95,7 +98,6 @@ fun ApiItem(
             Text(
                 text = api.description,
                 style = MaterialTheme.typography.bodyLarge,
-                maxLines = 3,
                 overflow = TextOverflow.Ellipsis
             )
             Row(
