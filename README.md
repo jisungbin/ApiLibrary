@@ -79,7 +79,9 @@ ApiLibrary shows free APIs by [public-api](https://github.com/davemachado/public
 
 ## 🗺️ Project Dependencies Graph
 
-<img src="/art/project-dependency-graph/graph.dot.png?raw=true" />
+<p align="center">
+  <img src="/art/project-dependency-graph/graph.dot.png?raw=true" />
+</p>
 
 ---
 
