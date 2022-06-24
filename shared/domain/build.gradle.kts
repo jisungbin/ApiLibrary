@@ -18,8 +18,9 @@ android {
 
 dependencies {
     val apis = listOf(
+        Dependencies.Jackson,
         Dependencies.Coroutine,
         Dependencies.EachUtil.Logeukes
-    )
+    ).dependenciesFlatten()
     apis.forEach(::api)
 }
