@@ -68,7 +68,8 @@ object Dependencies {
     }
 
     object Compiler {
-        const val RoomKsp = "androidx.room:room-compiler:${Versions.Jetpack.Room}"
+        @Ksp
+        const val Room = "androidx.room:room-compiler:${Versions.Jetpack.Room}"
         const val Hilt = "com.google.dagger:hilt-android-compiler:${Versions.Jetpack.Hilt}"
     }
 
