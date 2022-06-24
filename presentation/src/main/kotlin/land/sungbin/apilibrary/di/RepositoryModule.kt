@@ -13,12 +13,12 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ViewModelComponent
-import land.sungbin.apilibrary.data.repository.PublicApiRepositoryImpl
+import land.sungbin.apilibrary.data.remote.repository.PublicApiRepositoryRemoteImpl
 import land.sungbin.apilibrary.domain.repository.PublicApiRepository
 
 @Module
 @InstallIn(ViewModelComponent::class)
 object RepositoryModule {
     @Provides
-    fun provideRepository(): PublicApiRepository = PublicApiRepositoryImpl()
+    fun provideRepository(): PublicApiRepository = PublicApiRepositoryRemoteImpl()
 }
