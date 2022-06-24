@@ -7,16 +7,16 @@
  * Please see: https://github.com/jisungbin/ApiLibrary/blob/main/LICENSE.
  */
 
-package land.sungbin.apilibrary.data.util
+package land.sungbin.apilibrary.data.remote.extension
 
 import io.github.jisungbin.logeukes.logeukes
-import land.sungbin.apilibrary.data.api.PublicApiApi
+import java.util.concurrent.TimeUnit
+import land.sungbin.apilibrary.data.remote.api.PublicApiApi
 import land.sungbin.apilibrary.shared.domain.dsl.ApiLibraryDsl
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
-import java.util.concurrent.TimeUnit
 
 internal data class ClientModel(
     var interceptors: List<Interceptor> = emptyList(),

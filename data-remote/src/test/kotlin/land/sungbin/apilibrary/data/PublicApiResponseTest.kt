@@ -14,9 +14,9 @@ import io.mockk.impl.annotations.MockK
 import io.mockk.junit4.MockKRule
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runTest
-import land.sungbin.apilibrary.data.mapper.toDomain
-import land.sungbin.apilibrary.data.model.PublicApiResponse
-import land.sungbin.apilibrary.data.util.toModel
+import land.sungbin.apilibrary.data.remote.mapper.toDomain
+import land.sungbin.apilibrary.data.remote.model.PublicApiResponse
+import land.sungbin.apilibrary.data.remote.extension.toModel
 import land.sungbin.apilibrary.domain.repository.PublicApiRepository
 import land.sungbin.apilibrary.shared.test.PublicApiResponseDummy
 import org.junit.Before

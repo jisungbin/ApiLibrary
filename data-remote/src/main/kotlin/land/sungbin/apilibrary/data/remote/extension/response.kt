@@ -7,7 +7,7 @@
  * Please see: https://github.com/jisungbin/ApiLibrary/blob/main/LICENSE.
  */
 
-package land.sungbin.apilibrary.data.util
+package land.sungbin.apilibrary.data.remote.extension
 
 import retrofit2.Response
 

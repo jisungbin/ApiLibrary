@@ -7,7 +7,7 @@
  * Please see: https://github.com/jisungbin/ApiLibrary/blob/main/LICENSE.
  */
 
-package land.sungbin.apilibrary.data.model
+package land.sungbin.apilibrary.data.remote.model
 
 import com.fasterxml.jackson.annotation.JsonProperty
 

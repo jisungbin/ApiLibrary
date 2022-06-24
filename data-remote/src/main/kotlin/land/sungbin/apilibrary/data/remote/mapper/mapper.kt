@@ -7,10 +7,10 @@
  * Please see: https://github.com/jisungbin/ApiLibrary/blob/main/LICENSE.
  */
 
-package land.sungbin.apilibrary.data.mapper
+package land.sungbin.apilibrary.data.remote.mapper
 
-import land.sungbin.apilibrary.data.model.ApiItemResponse
-import land.sungbin.apilibrary.data.model.PublicApiResponse
+import land.sungbin.apilibrary.data.remote.model.ApiItemResponse
+import land.sungbin.apilibrary.data.remote.model.PublicApiResponse
 import land.sungbin.apilibrary.domain.model.ApiItem
 import land.sungbin.apilibrary.domain.model.PublicApi
 import land.sungbin.apilibrary.shared.domain.util.requireFieldNullMessage

@@ -7,15 +7,15 @@
  * Please see: https://github.com/jisungbin/ApiLibrary/blob/main/LICENSE.
  */
 
-package land.sungbin.apilibrary.data.repository
+CChpackage land.sungbin.apilibrary.data.remote.repository
 
-import land.sungbin.apilibrary.data.mapper.toDomain
-import land.sungbin.apilibrary.data.util.publicApiApi
-import land.sungbin.apilibrary.data.util.requireSuccessfulBody
+import land.sungbin.apilibrary.data.remote.extension.publicApiApi
+import land.sungbin.apilibrary.data.remote.extension.requireSuccessfulBody
+import land.sungbin.apilibrary.data.remote.mapper.toDomain
 import land.sungbin.apilibrary.domain.model.PublicApi
 import land.sungbin.apilibrary.domain.repository.PublicApiRepository
 
-class PublicApiRepositoryImpl : PublicApiRepository {
+class PublicApiRepositoryRemoteImpl : PublicApiRepository {
     override suspend fun getEntries(): PublicApi {
         val response = publicApiApi
             .fetchEntries()
