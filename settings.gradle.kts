@@ -9,8 +9,9 @@
 
 rootProject.name = "ApiLibrary"
 include(
-    ":data",
     ":domain",
+    ":data-local",
+    ":data-remote",
     ":presentation",
     ":shared:test",
     ":shared:domain",
