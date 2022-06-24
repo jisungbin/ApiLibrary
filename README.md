@@ -17,6 +17,8 @@
   <a href="https://sonarcloud.io/summary/new_code?id=jisungbin_ApiLibrary"><img src="https://sonarcloud.io/api/project_badges/measure?project=jisungbin_ApiLibrary&metric=ncloc" alt="Lines of Code"/></a>
 </p>
 
+# 잠시 개발 중단: 실력 부족
+
 ---
 
 ## 📚 What is ApiLibrary?
